@@ -3,9 +3,9 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Camera } from 'expo-camera';
 import FixedCamera from './components/FixedCamera';
 
-export default function App() {
+const App = () => {
 
-  const [hasPermission, setHasPermission] = useState(null);
+  const [hasPermission, setHasPermission] = useState<boolean | null>(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
 
   useEffect(() => {
@@ -41,6 +41,8 @@ export default function App() {
     </View>
   );
 }
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
